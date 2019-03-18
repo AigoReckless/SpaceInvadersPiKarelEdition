@@ -32,7 +32,7 @@ public class Nave {
         if (pulsadoIzquierda && x>0){
             x-= 3;
         }
-        if (pulsadoDerecha && x<VentanaJuego.ANCHOPANTALLA - imagen.getWidth(null)){
+        if (pulsadoDerecha && x<VentanaJuego.ANCHOPANTALLA - imagen.getWidth(null) - imagen.getWidth(null)/6){
             x+=3;
         }    
     }
