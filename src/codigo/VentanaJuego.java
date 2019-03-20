@@ -71,7 +71,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 listaMarcianos[i][j].y = i * (10 + listaMarcianos[i][j].imagen1.getHeight(null));
             }
         }
-        miDisparo.posicionaDisparo(miNave);
+        
     }
 
     private void bucleDelJuego() {
@@ -84,9 +84,10 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         //////////////////////////////////////////////////////////////////////
         //Redibujaremos aquí cada elemento
-        g2.drawImage(miNave.imagen, miNave.x, miNave.y, null);
+        
         //g2.drawImage(miMarciano.imagen1, miMarciano.x, miMarciano.y, null);
         g2.drawImage(miDisparo.imagen, miDisparo.x, miDisparo.y, null);
+        g2.drawImage(miNave.imagen, miNave.x, miNave.y, null);
         pintaMarcianos(g2);
         chequeaColision();
         miNave.mueve();
@@ -119,6 +120,8 @@ public class VentanaJuego extends javax.swing.JFrame {
                 if (rectanguloDisparo.intersects(rectanguloMarciano)){
                     listaMarcianos[i][j].y = 2000;
                     miDisparo.posicionaDisparo(miNave);
+                    miDisparo.y = 1000;
+                    miDisparo.disparado = false;
                 }
             }
         }
@@ -226,6 +229,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 break;
             case KeyEvent.VK_SPACE:
                 miDisparo.posicionaDisparo(miNave);
+                miDisparo.disparado = true;
                 break;
         }
     }//GEN-LAST:event_formKeyPressed
