@@ -27,23 +27,16 @@ public class Marciano {
     }
 
     public void mueve(boolean direccionMarciano) {
-        if (direccionMarciano) {
-            if (x<VentanaJuego.ANCHOPANTALLA - imagen1.getWidth(null)){
-                x += vX;
-            }
-        } 
-        else {
-            if (x > 0){
-                x -= vX;
-            }    
-        } 
+
+        x += vX;
+
     }
 
-//    public void setvX(int vX) {
-//        this.vX = vX;
-//    }
-//
-//    public int getvX() {
-//        return vX;
-//    }
+    public void setvX(int vX) {
+        this.vX = vX;
+    }
+
+    public int getvX() {
+        return vX;
+    }
 }
